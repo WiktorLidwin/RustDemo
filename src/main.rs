@@ -74,8 +74,6 @@ fn main() {
 
                 sleep();
             });
-        }else{
-            println!("Error :/");
         }
 
         if let Ok(msg) = rx.try_recv() {
