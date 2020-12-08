@@ -33,6 +33,7 @@ fn main() {
     println!("Local Ip:PORT {}", localIp);
     let server = TcpListener::bind(localIp).expect("Listener failed to bind");
     server.set_nonblocking(true).expect("failed to initialize non-blocking");
+    println!("port {}",server.local_addr().unwrap());
     let mut Rooms = Rooms::new();
     Rooms.addRoom("123".to_string());
     Rooms.addRoom("2".to_string());
