@@ -41,7 +41,7 @@ fn main() {
     }
 
     let _server = Iron::new(hello_world).http("0.0.0.0:8080").unwrap();
-    let server = TcpListener::bind(localIp).expect("Listener failed to bind");
+    let server = TcpListener::bind(TCPlocalIp).expect("Listener failed to bind");
     server.set_nonblocking(true).expect("failed to initialize non-blocking");
     println!("port {}",server.local_addr().unwrap());
     let mut Rooms = Rooms::new();
