@@ -18,6 +18,9 @@ use crate::TicTacToeStructs::TicTacToeStructs::Message;
 use crate::TicTacToeStructs::TicTacToeStructs::ServerMessage;
 use crate::TicTacToeStructs::TicTacToeStructs::Rooms;
 
+use iron;
+use iron::prelude::*;
+use iron::status;
 use std::net::Ipv4Addr;
 
 
@@ -30,7 +33,14 @@ fn main() {
     // println!("local ip address: {:?}", addr);
     println!("here?");
     let localIp = IP+":" +PORT; 
+    let TCPlocalIp = "0.0.0.0:16797"; 
     println!("Local Ip:PORT {}", localIp);
+
+    fn hello_world(_: &mut Request) -> IronResult<Response> {
+        Ok(Response::with((status::Ok, "Hello World!")))
+    }
+
+    let _server = Iron::new(hello_world).http("0.0.0.0:8080").unwrap();
     let server = TcpListener::bind(localIp).expect("Listener failed to bind");
     server.set_nonblocking(true).expect("failed to initialize non-blocking");
     println!("port {}",server.local_addr().unwrap());
