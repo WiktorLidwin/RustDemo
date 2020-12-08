@@ -23,11 +23,11 @@ use std::net::Ipv4Addr;
 
 fn main() {
     let PORT: &str = &*std::env::var("PORT").unwrap().to_owned();
-    // let PORT: &str= "6000";
+    // let PORT: &str= "59009";
     // println!("here1?");
-    let addr = Ipv4Addr::UNSPECIFIED;
-    let IP = std::env::var("IP").unwrap().to_owned();
-    println!("local ip address: {:?}", addr);
+    let IP = Ipv4Addr::UNSPECIFIED.to_string();
+    // let IP = std::env::var("IP").unwrap().to_owned();
+    // println!("local ip address: {:?}", addr);
     println!("here?");
     let localIp = IP+":" +PORT; 
     println!("Local Ip:PORT {}", localIp);
