@@ -1,1 +1,1 @@
-D:\Code\Ultimate-Tic-Tac-Toe\multiplayer\server\target\debug\server.exe: D:\Code\Ultimate-Tic-Tac-Toe\multiplayer\server\src\..\..\TicTacToeStructs.rs D:\Code\Ultimate-Tic-Tac-Toe\multiplayer\server\src\main.rs
+D:\Code\RustDemo\target\debug\server.exe: D:\Code\RustDemo\src\TicTacToeStructs.rs D:\Code\RustDemo\src\main.rs
