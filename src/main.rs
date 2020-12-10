@@ -46,7 +46,10 @@ fn main() {
     println!("port {}",server.local_addr().unwrap());
     let mut Rooms = Rooms::new();
     Rooms.addRoom("123".to_string());
-    Rooms.addRoom("2".to_string());
+    // Rooms.addRoom("2".to_string());
+    for x in 1..100 {
+        Rooms.addRoom(x.to_string());
+    }
     let mut clients = vec![];
     let (tx, rx) = mpsc::channel::<ServerMessage>();
     loop {
